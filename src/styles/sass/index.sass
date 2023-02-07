@@ -1,0 +1,285 @@
+@font-face
+    font-family: 'Proxima nova'
+    font-style: normal
+    font-weight: 700
+    src: url('../../fonts/proximanova_700.ttf')
+
+@font-face
+    font-family: 'Proxima nova lt'
+    font-style: normal
+    font-weight: 600
+    src: url('../../fonts/proximanova_600.ttf')
+
+@font-face
+    font-family: 'Proxima nova rg'
+    font-style: normal
+    font-weight: normal
+    src: url('../../fonts/proximanova_normal.ttf')
+
+@font-face 
+    font-family: 'Raleway'
+    font-style: normal
+    font-weight: 300
+    src: url('../../fonts/raleway.ttf')
+
+$color_orange: #FF8B00
+$color_white: #fff
+$color_purple: #7050E5
+$color_grey: #878787
+
+@mixin main-font
+    font-family: 'Proxima nova', 'Times New Roman', Times, serif
+    font-style: normal
+    font-weight: 700
+    font-size: 60px
+    line-height: 68px
+    color: $color_white
+
+*
+    margin: 0px
+    padding: 0px
+    box-sizing: border-box
+
+.container
+    width: 100vw
+    min-height: 100vh
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+
+.block
+    width: 1600px
+    min-height: 100vh
+    overflow: hidden
+
+.button
+    width: 174px
+    height: 54px
+    padding: 4px 0px
+
+.button_style
+    @include main-font
+    font-size: 14px
+    line-height: 45px
+    border: none
+    border-radius: 4px
+    background-color: $color_orange
+    text-transform: uppercase
+    cursor: pointer
+
+.button_style:active
+    border: 1px solid #fff
+
+.home
+    background-image: url('../../images/home/background.png')
+    @media (min-resolution: 2dppx)
+        background-image: url('../../images/home/background@2x.png')
+    background-repeat: no-repeat
+    background-position: center top
+
+//.home_style
+
+.header
+    min-height: 132px
+
+.header__logo
+    float: left
+    margin-top: 32px
+    margin-left: 224px
+
+.menu
+    display: flex
+    float: right
+    margin-top: 80px
+    margin-right: 220px
+
+.menu_style
+    list-style: none
+
+.menu__item
+    display: block
+    margin-left: 20px
+    padding: 0 4px
+    padding-bottom: 5px
+
+.menu__item_style
+    @include main-font
+    font-size: 15px
+    line-height: 18px
+    color: $color_white
+    text-decoration: none
+    text-transform: uppercase
+    transition-duration: 100ms
+
+.menu__item_style:hover
+    border-bottom: 3px solid $color_orange
+
+.carousel
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin-left: 306px
+    margin-top: 130px
+
+//.carousel__item
+
+.carousel__content-container
+    display: flex
+    flex-direction: column
+
+.carousel__head
+    margin-bottom: 12px
+
+.carousel__head_style
+    @include main-font
+    font-size: 55px
+    line-height: 55px
+
+.carousel__text
+    margin-bottom: 44px 
+
+.carousel__text_style
+    @include main-font
+    font-family: 'Proxima nova rg'
+    font-size: 16px
+    line-height: 30px
+    font-weight: 500
+
+.carousel__logo
+    display: flex
+    justify-content: center
+    align-items: center
+
+.carousel__indicators
+    display: flex
+    flex-direction: column
+    margin-right: 54px
+
+.indicator
+    width: 19px
+    margin-bottom: 12px
+    
+.find-out-more
+    width: 100%
+    margin-top: 135px
+    display: flex
+    flex-direction: column
+    align-items: center
+
+.find-out-more__text_style
+    @include main-font
+    font-size: 15px
+    line-height: 20px
+    font-weight: 600
+
+.find-out-more__button
+    margin-top: 19px
+    margin-bottom: 23px
+
+.find-out-more__button_style
+    position: relative
+    transition-duration: 400ms
+
+.find-out-more__button_style:hover
+    transform: scale(1.1)
+
+.statistic
+    margin-top: 160px
+    margin-bottom: 130px
+    display: flex
+    justify-content: center
+
+//.statistic__item
+    
+//.statistic__head
+     
+    
+.statistic__head_style
+    @include main-font
+    color: $color_purple
+    text-align: center
+    font-size: 60px
+    line-height: 68px
+
+.statistic__text
+    margin: 0 47px
+    margin-top: 14px
+    
+.statistic__text_style
+    @include main-font
+    color: $color_purple
+    font-size: 16px
+    line-height: 18px
+    text-align: center
+    letter-spacing: -2%
+    text-transform: uppercase
+    
+.products
+    position: relative
+
+.products::after
+    content: url('../../svg/products/after-head.svg')
+    width: 46px
+    position: absolute
+    top: 120px
+    right: 297px
+
+.products_style
+    background-color: #F8F8F8
+
+.products__head
+    margin-top: 145px
+    margin-right: 362px
+    text-align: right
+
+.grid-wrapper
+    display: flex
+    flex-direction: column
+    align-items: center
+
+.products__head_style
+    @include main-font
+    font-size: 68px
+    line-height: 72px
+    color: $color_purple
+
+.product__items-container
+    margin-top: 72px
+    margin-bottom: 120px
+    display: grid
+    grid-template-columns: repeat(3, minmax(280px, 300px))
+    row-gap: 59px
+    column-gap: 100px
+
+//.product__item
+
+.product__picture
+    min-height: 150px
+    display: flex
+    justify-content: center
+    align-items: flex-end
+
+.product__name 
+    margin-top: 28px
+    margin-bottom: 8px
+    
+.product__name_style
+    @include main-font
+    font-size: 18px
+    line-height: 20px
+    letter-spacing: -2%
+    color: $color_purple
+    text-transform: uppercase
+    text-align: center
+
+//.product__title 
+    
+.product__title_style
+    @include main-font
+    font-family: 'Proxima nova rg'
+    font-size: 15px
+    line-height: 19px
+    font-weight: 400
+    letter-spacing: -0.8%
+    color: $color_grey

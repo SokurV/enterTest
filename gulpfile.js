@@ -10,7 +10,7 @@ const uglify = require('gulp-uglify-es').default
 const babel = require('gulp-babel')
 const deletefiles = require('gulp-clean')
 
-function startServer() {
+async function startServer() {
     browserSync.init({
         server: {
             baseDir: './dist/',
@@ -88,7 +88,7 @@ function copySvg(){
         .pipe(dest('dist/svg'))
 }
 
-function copyResources(){
+async function copyResources(){
     copyImg()
     copyFonts()
     copySvg()
@@ -108,12 +108,12 @@ module.exports.cleanimg = cleanDistImg
 
 module.exports.cleandist = cleanDist
 
-module.exports.start = parallel(
+module.exports.start = series(
     cleanDist,
     styles, 
     dev_js,
-    copyResources,
     pages, 
+    copyResources,
     startServer, 
     watching
 )
@@ -122,8 +122,8 @@ module.exports.build = series(
     cleanDist,
     styles, 
     build_js,
-    copyResources, 
-    pages
+    pages,
+    copyResources
 )
 
 //Что можно добавить в сборку:
