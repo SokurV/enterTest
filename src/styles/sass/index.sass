@@ -3,37 +3,53 @@
     font-style: normal
     font-weight: 700
     src: url('../../fonts/proximanova_700.ttf')
-
 @font-face
     font-family: 'Proxima nova lt'
     font-style: normal
     font-weight: 600
     src: url('../../fonts/proximanova_600.ttf')
-
 @font-face
-    font-family: 'Proxima nova rg'
+    font-family: 'Proxima nova 500'
     font-style: normal
     font-weight: normal
     src: url('../../fonts/proximanova_normal.ttf')
-
 @font-face 
-    font-family: 'Raleway'
+    font-family: 'Raleway lt'
     font-style: normal
-    font-weight: 300
+    font-weight: 400
     src: url('../../fonts/raleway.ttf')
+@font-face 
+    font-family: 'Raleway 600'
+    font-style: normal
+    font-weight: 600
+    src: url('../../fonts/raleway_600.ttf')
+@font-face 
+    font-family: 'Raleway 800'
+    font-style: normal
+    font-weight: 800
+    src: url('../../fonts/raleway_800.ttf')
 
 $color_orange: #FF8B00
 $color_white: #fff
 $color_purple: #7050E5
 $color_grey: #878787
+$color_contact-us_background: #232323
+$color_contact-us_placeholder: #3D3D3D
+$color_footer_background: #363636
+
 
 @mixin main-font
     font-family: 'Proxima nova', 'Times New Roman', Times, serif
-    font-style: normal
-    font-weight: 700
     font-size: 60px
     line-height: 68px
     color: $color_white
+
+@mixin second-font
+    font-family: 'Raleway 600', 'Times New Roman', Times, serif
+    font-size: 15px
+    line-height: 20px
+    color: $color_grey
+    
 
 *
     margin: 0px
@@ -41,8 +57,6 @@ $color_grey: #878787
     box-sizing: border-box
 
 .container
-    width: 100vw
-    min-height: 100vh
     display: flex
     flex-direction: column
     justify-content: center
@@ -50,18 +64,21 @@ $color_grey: #878787
 
 .block
     width: 1600px
-    min-height: 100vh
+    @media (max-width: 1618px)
+        width: auto
+        max-width: 1600px
     overflow: hidden
 
 .button
-    width: 174px
-    height: 54px
-    padding: 4px 0px
+    max-width: 180px
+    min-height: 46px
+    padding: 4px 40px
 
 .button_style
     @include main-font
+    font-family: 'Proxima nova lt'
     font-size: 14px
-    line-height: 45px
+    line-height: 18px
     border: none
     border-radius: 4px
     background-color: $color_orange
@@ -124,7 +141,7 @@ $color_grey: #878787
 
 //.carousel__item
 
-.carousel__content-container
+.carousel__text-content-container
     display: flex
     flex-direction: column
 
@@ -141,7 +158,7 @@ $color_grey: #878787
 
 .carousel__text_style
     @include main-font
-    font-family: 'Proxima nova rg'
+    font-family: 'Proxima nova 500'
     font-size: 16px
     line-height: 30px
     font-weight: 500
@@ -154,14 +171,14 @@ $color_grey: #878787
 .carousel__indicators
     display: flex
     flex-direction: column
+    justify-content: space-between
+    height: 90px
     margin-right: 54px
 
 .indicator
     width: 19px
-    margin-bottom: 12px
     
 .find-out-more
-    width: 100%
     margin-top: 135px
     display: flex
     flex-direction: column
@@ -185,10 +202,10 @@ $color_grey: #878787
     transform: scale(1.1)
 
 .statistic
-    margin-top: 160px
-    margin-bottom: 130px
     display: flex
     justify-content: center
+    margin-top: 160px
+    margin-bottom: 130px
 
 //.statistic__item
     
@@ -248,17 +265,21 @@ $color_grey: #878787
     margin-top: 72px
     margin-bottom: 120px
     display: grid
-    grid-template-columns: repeat(3, minmax(280px, 300px))
+    grid-template-columns: repeat(3, minmax(200px, 300px))
     row-gap: 59px
     column-gap: 100px
 
-//.product__item
+.product__item
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: center
 
 .product__picture
     min-height: 150px
     display: flex
+    flex-direction: column
     justify-content: center
-    align-items: flex-end
 
 .product__name 
     margin-top: 28px
@@ -273,13 +294,253 @@ $color_grey: #878787
     text-transform: uppercase
     text-align: center
 
-//.product__title 
+.product__title
+    text-align:  left
     
 .product__title_style
     @include main-font
-    font-family: 'Proxima nova rg'
+    font-family: 'Proxima nova 500'
     font-size: 15px
     line-height: 19px
     font-weight: 400
     letter-spacing: -0.8%
     color: $color_grey
+
+.about
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap 
+    min-height: auto
+    
+//.about_style
+
+.about__text-content-container
+    width: 465px
+    margin-top: 210px
+    margin-left: 160px
+
+//.about__head 
+    
+.about__head_style
+    @include main-font
+    color: $color_purple
+    font-size: 40px
+    line-height: 55px
+
+.about__text 
+    margin-top: 15px
+    margin-bottom: 38px
+
+.about__text_style
+    @include main-font
+    font-family: 'Proxima nova 500'
+    font-size: 15px
+    line-height: 21px
+    letter-spacing: -2%
+    font-weight: 100
+    color: $color_grey
+
+.about__video-preview-container
+    display: flex
+    justify-content: center
+    width: 724px
+    height: 444px
+    margin: 114px 137px 97px 0
+    background-image: url('../../images/about/popup-link.png')
+    @media (min-resolution: 2dppx)
+        background-image: url('../../images/about/popup-link.png@2x.png')
+    background-repeat: no-repeat
+    background-position: center top
+
+.about__link-container
+    margin-top: 173px
+    display: flex
+    flex-direction: column
+    align-items: center
+
+.link__button
+    display: block
+    transition-duration: 150ms
+
+.link__button:active
+    transform: scale(0.95)
+    transition-duration: 150ms
+
+.link__head 
+    margin-top: 25px
+    margin-bottom: 10px
+    
+.link__head_style
+    @include second-font
+    color: $color_white
+    text-transform: uppercase
+
+
+//.link__text 
+    
+.link__text_style
+    @include second-font
+    font-family: 'Raleway 800'
+    font-size: 32px
+    line-height: 38px
+    color: $color_white
+    text-transform: uppercase
+
+.contact
+    min-height: auto
+
+.contact_style
+    background-color: $color_contact-us_background
+
+.contact-background-wrapper
+    display: flex
+    justify-content: space-between
+    position: relative
+
+.contact-background-wrapper::before
+    content: ''
+    position: absolute
+    width: 750px
+    height: 750px
+    top: -300px
+    left: -180px
+    background: linear-gradient(12.08deg, #F101BF 2.82%, #0066FF 97.06%)
+    opacity: 0.33
+    filter: blur(125px)
+    border-radius: 373.431px
+    transform: rotate(-122.79deg)
+
+.contact-background-wrapper::after
+    content: ''
+    position: absolute
+    width: 470px
+    height: 480px
+    right: 215px
+    bottom: -220px
+    background: linear-gradient(12.08deg, #F101BF 2.82%, #0066FF 97.06%)
+    opacity: 0.3
+    filter: blur(125px)
+    border-radius: 236.048px
+    transform: rotate(5.78deg)
+
+.contact__text-content 
+    margin-top: 128px
+    margin-left: 200px
+    
+.contact__text-content_style
+    @include main-font
+    color: $color_white
+    font-size: 55px
+    line-height: 55px
+    z-index: 2
+
+.form-container
+    z-index: 2
+
+.form
+    margin: 120px 0
+    margin-right: 149px
+    width: 640px
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    border: none
+
+.form__head
+    display: block
+
+.form__head_style
+    @include main-font
+    font-size: 28px
+    font-family: 'Proxima nova lt'
+    letter-spacing: -2.67%
+
+.name-fields-wrapper
+    display: flex
+
+.input-title
+    display: block
+    margin-left: 8px
+    margin-bottom: 8px
+    
+.input-title_style
+    @include main-font
+    font-family: 'Proxima nova 500'
+    font-size: 13px
+    line-height: 15px
+    color: $color_white
+
+.input-field 
+    display: block
+    width: 640px
+    height: 40px
+    margin-right: 20px
+    margin-bottom: 28px
+    padding-left:13px
+    resize: vertical
+
+.input-field_310px
+    width: 310px
+
+.input-field_98px
+    padding-top: 8px
+    min-height: 98px
+    max-height: 200px
+    
+.input-field_style
+    border-radius: 8px
+    @include second-font
+    font-family: 'Raleway lt'
+    font-size: 14px
+    line-height: 22px
+    transition-duration: 200ms
+    border: none
+    outline: none
+
+.input-field_style:focus
+    box-shadow: 0 0 5px 4px $color_white
+
+.input-field_style::placeholder
+    @include second-font
+    font-family: 'Raleway lt'
+    font-size: 14px
+    line-height: 22px
+    color: $color_contact-us_placeholder
+
+.button_form
+    margin-top: 4px
+    width: 200px
+    height: 54px
+
+.footer
+    height: 520px
+
+.footer::before
+    content: ''
+    display: block
+    position: relative
+    top: 0px
+    width: 100%
+    height: 97px
+    background-color: $color_white
+
+.footer_style
+    background-color: $color_footer_background 
+
+.footer-bottom-text
+    position: relative
+    top: 400px
+
+.footer-bottom-text_style
+    background-color: #252525
+    @include second-font
+    font-family: 'Raleway lt'
+    font-size: 10px
+    line-height: 23px
+    color: $color_white
+    text-align: center
+
+
+.indicator_small
+    width: auto
+    height: 10px
