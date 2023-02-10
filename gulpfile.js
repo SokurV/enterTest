@@ -78,6 +78,11 @@ function copyImg(){
         .pipe(dest('dist/images'))
 }
 
+function copyVideo(){
+    return src('src/video/**/*.+(MP4)')
+        .pipe(dest('dist/video'))
+}
+
 function copyFonts(){
     return src('src/fonts/**/*.+(otf|ttf)')
         .pipe(dest('dist/fonts'))
@@ -92,6 +97,7 @@ async function copyResources(){
     copyImg()
     copyFonts()
     copySvg()
+    copyVideo()
 }
 
 function cleanDistImg() {

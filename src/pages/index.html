@@ -215,6 +215,7 @@
                 <figure class="about__link-container">
                     <a href="#">
                         <img class="link__button"
+                             id="button-play"
                              width="77px" 
                              src="./images/about/play-button.png" 
                              alt="Play button" 
@@ -227,6 +228,16 @@
                         mSign Connected token
                     </p>
                 </figure>
+            </div>
+            <div id="popup-container" class="popup-container display_none">
+                <div class="popup_video-container popup_video-container_style">
+                    <video  id="popup-video" 
+                            class="popup-video" 
+                            src="./video/about/popup-video.mp4" 
+                            preload loop controls>
+                    </video>
+                </div>
+                <div id="button-close" class="button-close button-close_style"></div>
             </div>
         </div>
 

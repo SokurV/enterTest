@@ -51,7 +51,6 @@ $color_twitter-api_main: #7050E5
     font-size: 15px
     line-height: 20px
     color: $color_grey
-    
 
 *
     margin: 0px
@@ -395,6 +394,60 @@ $color_twitter-api_main: #7050E5
     line-height: 38px
     color: $color_white
     text-transform: uppercase
+
+.popup-container
+    width: 100vw
+    height: 100%
+    position: fixed
+    z-index: 5
+    background-color: rgba(85, 85, 85, 0.7)
+    top: 0
+    left: 0
+    display: flex
+    justify-content: center
+    align-items: center
+
+.popup_video-container_style
+    background-color:  $color_white
+    border-radius: 16px
+
+.popup-video
+    height: 80vh
+    margin: 24px
+
+.button-close
+    width: 50px
+    height: 50px
+    position: absolute
+    top: 50px
+    right: 67px
+    display: flex
+    justify-content: center
+    align-items: center
+
+.button-close::after
+    content: '\00D7'
+    font-family: Arial, Helvetica, sans-serif
+    transform: scale(1.5)
+    font-weight: 300
+    text-transform: uppercase
+
+.button-close_style
+    background-color: $color_white
+    border: 1px solid #000
+    border-radius: 8px
+    font-family: Arial, Helvetica, sans-serif
+    font-weight: 600
+    font-size: 32px 
+    cursor: pointer
+    transition-duration: 300ms
+
+.button-close_style:hover
+    color: $color_orange
+    border: 1px solid $color_orange
+
+.display_none
+    display: none
 
 .contact
     min-height: auto
