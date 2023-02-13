@@ -9,18 +9,18 @@
 </head>
 <body>
     <div class="container">
-        <div class="block home home_style">
+        <div id="home" class="block home home_style">
             <header class="header">
-                <figure class="header__logo">
-                    <img width="78px" height="100px" src="./images/home/logo.png" alt="logo" srcset="./images/home/logo@2x.png 2x">
+                <figure>
+                    <img class="header__logo" src="./images/home/logo.png" alt="logo" srcset="./images/home/logo@2x.png 2x">
                 </figure>
                 <nav class="menu menu_style">
-                    <a class="menu__item menu__item_style" href="#">home</a>
-                    <a class="menu__item menu__item_style" href="#">products</a>
+                    <a class="menu__item menu__item_style" href="#home">home</a>
+                    <a class="menu__item menu__item_style" href="#products">products</a>
                     <a class="menu__item menu__item_style" href="#">services</a>
                     <a class="menu__item menu__item_style" href="#">resources</a>
-                    <a class="menu__item menu__item_style" href="#">about</a>
-                    <a class="menu__item menu__item_style" href="#">contact us</a>
+                    <a class="menu__item menu__item_style" href="#about">about</a>
+                    <a class="menu__item menu__item_style" href="#contact">contact us</a>
                 </nav>
             </header>
             <div class="carousel">
@@ -36,8 +36,8 @@
                     </div>
                 </section>
 
-                <figure class="carousel__logo">
-                    <object data="./svg/home/tweet-logo.svg" type="image/svg+xml"></object>
+                <figure class="carousel-logo-container">
+                    <object class="carousel__logo" data="./svg/home/tweet-logo.svg" type="image/svg+xml"></object>
                 </figure>
                 
                 <figure class="carousel__indicators">
@@ -46,41 +46,42 @@
                     <object class="indicator" data="./svg/home/polygon_white_nofill.svg" type="image/svg+xml"></object>
                 </figure>
             </div>
-            <div class="find-out-more">
+            <div class="find-out-more-container">
                 <p class="find-out-more__text find-out-more__text_style">FIND OUT MORE</p>
-                <a href="#">
+                <a id="find-out-button" href="#products">
                     <img class="find-out-more__button find-out-more__button_style" 
                          src="./images/home/find-out-button.png" 
                          alt="Find out more" 
                          srcset="./images/home/find-out-button@2x.png 2x">
                 </a>
             </div>
-            <div class="statistic">
-                <section class="statistic__item">
-                    <h3 class="statistic__head statistic__head_style">126,300</h3>
-                    <p class="statistic__text statistic__text_style">
-                        Identity Theft Cases Reported<br>
-                        in Australia
-                    </p>
-                </section>
-                <section class="statistic__item">
-                    <h3 class="statistic__head statistic__head_style">$20.1bn</h3>
-                    <p class="statistic__text statistic__text_style">
-                        Online Transactions per<br>
-                        annum by Australians
-                    </p>
-                </section>
-                <section class="statistic__item">
-                    <h3 class="statistic__head statistic__head_style">45,511</h3>
-                    <p class="statistic__text statistic__text_style">
-                        Online Fraud Cases Reported<br>
-                        in Australia
-                    </p>
-                </section>
-            </div>
         </div>
         
-        <div class="block products products_style">
+        <div class="statistic">
+            <section class="statistic__item">
+                <h3 class="statistic__head statistic__head_style">126,300</h3>
+                <p class="statistic__text statistic__text_style">
+                    Identity Theft Cases Reported<br>
+                    in Australia
+                </p>
+            </section>
+            <section class="statistic__item">
+                <h3 class="statistic__head statistic__head_style">$20.1bn</h3>
+                <p class="statistic__text statistic__text_style">
+                    Online Transactions per<br>
+                    annum by Australians
+                </p>
+            </section>
+            <section class="statistic__item">
+                <h3 class="statistic__head statistic__head_style">45,511</h3>
+                <p class="statistic__text statistic__text_style">
+                    Online Fraud Cases Reported<br>
+                    in Australia
+                </p>
+            </section>
+        </div>
+
+        <div id="products" class="block products products_style">
             <h2 class="products__head products__head_style">
                 What We Do
             </h2>
@@ -200,7 +201,7 @@
             </div>
         </div>
 
-        <div class="block about about_style">
+        <div id="about" class="block about about_style">
             <div class="about__text-content-container">
                 <h2 class="about__head about__head_style">Product Spotlight</h2>
                 <p class="about__text about__text_style">
@@ -209,7 +210,7 @@
                     transactions independent of the delivery channel that initiated the 
                     request.
                 </p>
-                <button class="button button_style">more info</button>
+                <button class="button button_style button_about">more info</button>
             </div>
             <div class="about__video-preview-container">
                 <figure class="about__link-container">
@@ -231,17 +232,24 @@
             </div>
             <div id="popup-container" class="popup-container display_none">
                 <div class="popup_video-container popup_video-container_style">
-                    <video  id="popup-video" 
+                    <!-- <video  id="popup-video" 
                             class="popup-video" 
-                            src="./video/about/popup-video.mp4" 
+                            src="./video/about/popup-video.MP4"                       
                             preload loop controls>
-                    </video>
+                    </video> -->
+                    <iframe src="https://www.youtube.com/embed/y8Yv4pnO7qc" 
+                            id="popup-video" 
+                            class="popup-video" 
+                            frameborder="0" 
+                            title="YouTube video"
+                            allowfullscreen>
+                    </iframe>
                 </div>
                 <div id="button-close" class="button-close button-close_style"></div>
             </div>
         </div>
 
-        <div class="block contact contact_style">
+        <div id="contact" class="block contact contact_style">
             <div class="contact-background-wrapper">
                 <p class="contact__text-content contact__text-content_style">
                     Ready<br> to get started?
@@ -330,12 +338,12 @@
                         navigation
                     </h4>
                     <ul class="section__links-list">
-                        <li><a class="section__link section__link_style" href="#">home</a></li>
-                        <li><a class="section__link section__link_style" href="#">products</a></li>
+                        <li><a class="section__link section__link_style" href="#home">home</a></li>
+                        <li><a class="section__link section__link_style" href="#products">products</a></li>
                         <li><a class="section__link section__link_style" href="#">services</a></li>
                         <li><a class="section__link section__link_style" href="#">resources</a></li>
-                        <li><a class="section__link section__link_style" href="#">about</a></li>
-                        <li><a class="section__link section__link_style" href="#">contact us</a></li>
+                        <li><a class="section__link section__link_style" href="#about">about</a></li>
+                        <li><a class="section__link section__link_style" href="#contact">contact us</a></li>
                     </ul>
                 </section>
                 <section class="section-category-container">
@@ -345,7 +353,7 @@
                     <ul class="section__links-list">
                         <li><a class="section__link section__link_style" href="#">desclaimer</a></li>
                         <li><a class="section__link section__link_style" href="#">legal</a></li>
-                        <li><a class="section__link section__link_style" href="#">environment policy</a></li>
+                        <li><a class="section__link section__link_style" href="#">environment<br>policy</a></li>
                         <li><a class="section__link section__link_style" href="#">privacy</a></li>
                     </ul>
                 </section>
@@ -360,8 +368,8 @@
                 </section>
             </div>
 
-            <div class="footer__logo">
-                <img src="./images/footer/footer-logo.png" alt="Footer logo" srcset="./images/footer/footer-logo@2x.png 2x">
+            <div class="footer-logo-container">
+                <img class="footer__logo" src="./images/footer/footer-logo.png" alt="Footer logo" srcset="./images/footer/footer-logo@2x.png 2x">
             </div>
 
             <p class="footer__bottom-text footer__bottom-text_style">
