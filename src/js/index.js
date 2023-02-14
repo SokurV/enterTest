@@ -2,7 +2,9 @@ const BTN_PLAY = document.getElementById('button-play')
 const POPUP_CONTAINER = document.getElementById('popup-container')
 const POPUP_VIDEO = document.getElementById('popup-video')
 const FIND_BTN = document.getElementById('find-out-button')
-const PRODUCTS_BLOCK = document.getElementById('products') 
+const PRODUCTS_BLOCK = document.getElementById('products')
+const BURGER_BTN = document.getElementById('burger-button')
+const MENU_BLOCK = document.querySelector('.menu')
 
 function popupOpenClose(event){
     if(event.target.id === 'button-play'){
@@ -27,6 +29,17 @@ function smoothScroll(target){
 }
 
 document.addEventListener('click', popupOpenClose)
+
 //FIND_BTN.addEventListener('click', smoothScroll.bind(null, PRODUCTS_BLOCK))
+
+function menuItemClick(){
+    MENU_BLOCK.classList.remove('display_flex')
+    MENU_BLOCK.removeEventListener('click', menuItemClick)
+}
+
+BURGER_BTN.addEventListener('click', ()=>{
+    MENU_BLOCK.classList.toggle('display_flex')
+    MENU_BLOCK.addEventListener('click', menuItemClick)
+})
 
 
