@@ -1,10 +1,14 @@
-const BTN_PLAY = document.getElementById('button-play')
+//const BTN_PLAY = document.getElementById('button-play')
 const POPUP_CONTAINER = document.getElementById('popup-container')
 const POPUP_VIDEO = document.getElementById('popup-video')
 const FIND_BTN = document.getElementById('find-out-button')
 const PRODUCTS_BLOCK = document.getElementById('products')
 const BURGER_BTN = document.getElementById('burger-button')
 const MENU_BLOCK = document.querySelector('.menu')
+const CAROUSEL_BTN_LEFT = document.getElementById('carousel-button-left')
+const CAROUSEL_BTN_RIGHT = document.getElementById('carousel-button-right')
+const CAROUSEL_WINDOW = document.querySelector('.carousel-window')
+const CAROUSEL_ITEM = document.querySelector('.carousel__item')
 
 function popupOpenClose(event){
     if(event.target.id === 'button-play'){
@@ -21,16 +25,16 @@ function popupOpenClose(event){
     }
 }
 
-function smoothScroll(target){
+document.addEventListener('click', popupOpenClose)
+
+/* function smoothScroll(target){
     window.scrollTo({
         block: "center",
         top: target.offsetTop,
         behavior: "smooth"})
 }
 
-document.addEventListener('click', popupOpenClose)
-
-//FIND_BTN.addEventListener('click', smoothScroll.bind(null, PRODUCTS_BLOCK))
+FIND_BTN.addEventListener('click', smoothScroll.bind(null, PRODUCTS_BLOCK)) */
 
 function menuItemClick(){
     MENU_BLOCK.classList.remove('display_flex')
@@ -42,4 +46,12 @@ BURGER_BTN.addEventListener('click', ()=>{
     MENU_BLOCK.addEventListener('click', menuItemClick)
 })
 
+CAROUSEL_BTN_RIGHT.addEventListener("click", () => {
+    const ITEM_WIDTH = CAROUSEL_ITEM.clientWidth
+    CAROUSEL_WINDOW.scrollLeft += ITEM_WIDTH
+})
 
+CAROUSEL_BTN_LEFT.addEventListener("click", () => {
+    const ITEM_WIDTH = CAROUSEL_ITEM.clientWidth
+    CAROUSEL_WINDOW.scrollLeft -= ITEM_WIDTH
+})

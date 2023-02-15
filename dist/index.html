@@ -29,29 +29,48 @@
                          alt="Burger button">
                 </a>
             </header>
-            <div class="carousel">
-                <section class="carousel__item">
-                    <div class="carousel__text-content-container">
-                        <h2 class="carousel__head carousel__head_style">Device Authentication</h2>
-                        <p class="carousel__text carousel__text_style">
-                            SALT Group is a world leader in authentication and security. We have<br>
-                            a range of services to improve user authentication.<br>
-                            Discover the possibilities with SALT.
-                        </p>
-                        <button class="home__button button button_style">get started</button>
+            <div class="home-content-container">
+                <div class="carousel">
+                    <button id="carousel-button-left" class="carousel__button carousel__button_style carousel__button_left">&#10094;</button>
+                    <button id="carousel-button-right" class="carousel__button carousel__button_style carousel__button_right">&#10095;</button>
+                    <div class="carousel-window">
+                        <section class="carousel__item">
+                            <h2 class="carousel__head carousel__head_style">Device Authentication</h2>
+                            <p class="carousel__text carousel__text_style">
+                                SALT Group is a world leader in authentication and security. We have<br>
+                                a range of services to improve user authentication.<br>
+                                Discover the possibilities with SALT.
+                            </p>
+                            <button class="home__button button button_style">get started</button>
+                        </section>
+                        <section class="carousel__item">
+                            <h2 class="carousel__head carousel__head_style">Item 2</h2>
+                            <p class="carousel__text carousel__text_style">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis 
+                                doloremque fuga expedita magnam. Commodi, laudantium tempore doloremque 
+                                sequi, rerum ducimus inventore exercitationem optio delectus, officia reprehenderit 
+                                nihil aliquid cum id!
+                            </p>
+                        </section>
+                        <section class="carousel__item">
+                            <h2 class="carousel__head carousel__head_style">Item 3</h2>
+                            <figure class="carousel-logo-container">
+                                <object class="carousel__logo" data="./svg/home/tweet-logo.svg" type="image/svg+xml"></object>
+                            </figure>
+                        </section>
                     </div>
-                </section>
+                </div>
 
-                <figure class="carousel-logo-container">
-                    <object class="carousel__logo" data="./svg/home/tweet-logo.svg" type="image/svg+xml"></object>
-                </figure>
-                
-                <figure class="carousel__indicators">
-                    <object class="indicator" data="./svg/home/polygon_orange_fill.svg" type="image/svg+xml"></object>
-                    <object class="indicator" data="./svg/home/polygon_white_nofill.svg" type="image/svg+xml"></object>
-                    <object class="indicator" data="./svg/home/polygon_white_nofill.svg" type="image/svg+xml"></object>
-                </figure>
-            </div>
+            <figure class="home-logo-container">
+                <object class="home__logo" data="./svg/home/tweet-logo.svg" type="image/svg+xml"></object>
+            </figure>
+            
+            <figure class="home__indicators">
+                <object class="indicator" data="./svg/home/polygon_orange_fill.svg" type="image/svg+xml"></object>
+                <object class="indicator" data="./svg/home/polygon_white_nofill.svg" type="image/svg+xml"></object>
+                <object class="indicator" data="./svg/home/polygon_white_nofill.svg" type="image/svg+xml"></object>
+            </figure></div>
+
             <div class="find-out-more-container">
                 <p class="find-out-more__text find-out-more__text_style">FIND OUT MORE</p>
                 <a id="find-out-button" href="#products">
